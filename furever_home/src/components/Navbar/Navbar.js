@@ -6,7 +6,7 @@ export default function Navbar({ menuOpen, setMenuOpen }){
            <div className="wrapper">
             <div className="left">
             <a href="#intro" className="logo">
-                Furever Home
+                Furever Home <img src='./img/paw.gif' alt="Paw"></img>
                 </a>
             </div>
             <div className="right">
