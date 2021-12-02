@@ -5,7 +5,7 @@ export default function Navbar({ menuOpen, setMenuOpen }){
         <div className={"navbar " + (menuOpen && "active")}>
            <div className="wrapper">
             <div className="left">
-            <a href="#intro" className="logo">
+            <a href="/" className="logo">
                 Furever Home <img src='./img/paw.gif' alt="Paw"></img>
                 </a>
             </div>
