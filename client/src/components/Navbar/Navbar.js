@@ -11,6 +11,7 @@ export default function Navbar({ menuOpen, setMenuOpen }){
                 Furever Home <img src='./img/paw.gif' alt="Paw"></img>
                 </a>
             </div>
+            
             {isLoggedIn && 
                 <>
                     <div>
