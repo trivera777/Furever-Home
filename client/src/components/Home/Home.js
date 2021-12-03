@@ -9,8 +9,8 @@ export default function Home(){
                     a snuggle buddy - small or large, 
                     we'll help you find your forever friend!
                 </div>
-
-
+                
+                
             </div>
         </div>
     )
