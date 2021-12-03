@@ -42,7 +42,7 @@ const Signup = () => {
 
   return (
     <div
-      className="container"
+      className="sections"
       style={{
         width: "550px",
         fontSize: "25px",

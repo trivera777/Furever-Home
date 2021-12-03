@@ -43,11 +43,6 @@ const Login = (props) => {
   };
 
   return (
-    <div className="container" 
-    style={{ 
-      width: "550px",
-      fontSize: "25px"
-      }}>
       <Card>
         <Card.Header>Login</Card.Header>
         <Card.Body>
@@ -91,7 +86,6 @@ const Login = (props) => {
           )}
         </Card.Body>
       </Card>
-    </div>
   );
 };
 
