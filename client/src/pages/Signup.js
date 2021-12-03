@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { useMutation } from '@apollo/client';
 import { CREATE_USER } from '../utils/mutation';
-
 import Auth from '../utils/auth';
+
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Card from "react-bootstrap/Card";
+
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -39,35 +42,46 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-          <div className="card-body">
+    <div className="container" 
+    style={{ 
+      width: "550px",
+      fontSize: "25px"
+      }}>
+      <Card>
+        <Card.Header bg="info">Sign Up</Card.Header>
+        <Card.Body>
             {data ? (
               <p>
                 Success! You may now head{' '}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
+              <Form onSubmit={handleFormSubmit}>
+               <Form.Group className="mb-3">
+                <Form.Label>Username</Form.Label>
+                <Form.Control
                   className="form-input"
-                  placeholder="Your username"
+                  placeholder="Enter username"
                   name="username"
                   type="text"
                   value={formState.name}
                   onChange={handleChange}
-                />
-                <input
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
                   className="form-input"
-                  placeholder="Your email"
+                  placeholder="Enter email"
                   name="email"
                   type="email"
                   value={formState.email}
                   onChange={handleChange}
                 />
-                <input
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
                   className="form-input"
                   placeholder="******"
                   name="password"
@@ -75,14 +89,11 @@ const Signup = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
+                </Form.Group>
+                <Button variant="outline-dark" type="submit">
+                Submit
+              </Button>
+              </Form>
             )}
 
             {error && (
@@ -90,10 +101,9 @@ const Signup = () => {
                 {error.message}
               </div>
             )}
-          </div>
-        </div>
-      </div>
-    </main>
+           </Card.Body>
+      </Card>
+    </div>
   );
 };
 
