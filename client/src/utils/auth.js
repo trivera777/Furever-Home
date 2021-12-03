@@ -7,30 +7,43 @@ class AuthService {
 
   loggedIn() {
     const token = this.getToken();
-    return token && !this.isTokenExpired(token) ? true : false;
+    return !this.isTokenExpired(token);
   }
 
   isTokenExpired(token) {
-    const decoded = decode(token);
-    if (decoded.exp < Date.now() / 1000) {
-      localStorage.removeItem('id_token');
-      return true;
-    }
-    return false;
+    // const decoded = decode(token);
+    // if (decoded.exp < Date.now() / 1000) {
+    //   localStorage.removeItem('id_token');
+    //   return true;
+    // }
+    // return false;
+    
+    return token === null || token === undefined;
   }
 
   getToken() {
     return localStorage.getItem('id_token');
   }
 
-  login(idToken) {
+  getUsername() {
+    return localStorage.getItem('username');
+  }
+
+  getCurrentUser() {
+    if(this.loggedIn()) {
+      return { username: this.getUsername(), token: this.getToken()}
+    }
+    return ;
+  };
+
+  login(username, idToken) {
     localStorage.setItem('id_token', idToken);
-    window.location.assign('/');
+    localStorage.setItem('username', username);
   }
 
   logout() {
     localStorage.removeItem('id_token');
-    window.location.reload();
+    localStorage.removeItem('username');
   }
 }
 
