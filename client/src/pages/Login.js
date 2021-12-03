@@ -26,9 +26,9 @@ const Login = (props) => {
     event.preventDefault();
     console.log(formState);
     try {
-      // const { data } = await login({
-      //   variables: { ...formState },
-      // });
+      const { data } = await login({
+        variables: { ...formState },
+      });
 
       userLogin({ username: formState.email, token: formState.password });
       navigate("/");
