@@ -43,7 +43,11 @@ const Login = (props) => {
   };
 
   return (
-    <div className="container">
+    <div className="container" 
+    style={{ 
+      width: "550px",
+      fontSize: "25px"
+      }}>
       <Card>
         <Card.Header>Login</Card.Header>
         <Card.Body>

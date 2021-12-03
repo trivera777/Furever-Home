@@ -42,9 +42,13 @@ const Signup = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container" 
+    style={{ 
+      width: "550px",
+      fontSize: "25px"
+      }}>
       <Card>
-        <Card.Header>Sign Up</Card.Header>
+        <Card.Header bg="info">Sign Up</Card.Header>
         <Card.Body>
             {data ? (
               <p>
