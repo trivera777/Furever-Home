@@ -3,9 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutation";
 import { useAuth } from "../context/AuthContext";
+
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
+import './login.scss'
 
 const Login = (props) => {
   const { login: userLogin } = useAuth();
@@ -43,12 +45,10 @@ const Login = (props) => {
   };
 
   return (
-    <div className="container" 
-    style={{ 
-      width: "550px",
-      fontSize: "25px"
-      }}>
-      <Card>
+    <main className="login" id="login">
+    <div className="container">
+      
+    <Card>
         <Card.Header>Login</Card.Header>
         <Card.Body>
           {data ? (
@@ -92,6 +92,7 @@ const Login = (props) => {
         </Card.Body>
       </Card>
     </div>
+  </main>
   );
 };
 

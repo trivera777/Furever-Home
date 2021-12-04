@@ -2,46 +2,38 @@
 
 .navbar {
   width: 100%;
-  background-color: #fff;
-  color: #000;
+  color: #fff;
   position: fixed;
   z-index: 3;
   transition: all 1s ease;
+  background-color: transparent;
+  
 
   .wrapper {
-    width: 100%;
-    padding: 5px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    .itemContainer {
-      display: flex;
-
-      .item {
-        font-size: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin: 0 50px;
-      }
-    }
+    background-color: transparent;
+    
 
     .left {
-      display: flex;
       align-items: center;
 
       .logo {
-        font-size: 45px;
+        font-size: 50px;
         font-weight: 700;
         text-decoration: none;
         color: inherit;
         font-family: "Gloria Hallelujah", cursive;
+        padding-left: 20px;
+        align-items: center;
       }
 
       img {
         width: 60px;
         height: 60px;
+        -webkit-filter: invert(1);
+        filter: invert(1);
       }
     }
 
@@ -53,6 +45,7 @@
         flex-direction: column;
         justify-content: space-between;
         cursor: pointer;
+        padding-right: 50px;
 
         span {
           width: 100%;
@@ -66,14 +59,8 @@
   }
 
   &.active {
-    background-color: rgba(0, 0, 0, 0.29);
+    background-color: rgba(0, 0, 0, 0);
     color: white;
-
-    img {
-      -webkit-filter: invert(1);
-      filter: invert(1);
-      transition: all 1s ease;
-      }
 
     .hamburger {
       span {

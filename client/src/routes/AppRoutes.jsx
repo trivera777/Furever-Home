@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes ,Route } from 'react-router-dom';
-import Adopt from '../components/Adopt/Adopt';
+import Adopt from '../pages/Adopt';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import RequireAuth from '../components/RequireAuth';
