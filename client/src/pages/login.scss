@@ -21,7 +21,7 @@ body,
   .container {
     display: flex;
     width: 500px;
-    height: 400px;
+    height: 430px;
     margin-top: 200px;
     border-radius: 100px 30px;
     justify-content: center;
@@ -43,15 +43,16 @@ body,
       .form-input{
         width: 100%;
         font-size: 15px;
+        margin-bottom: 30px;
       }
 
       button {
         border-radius: 10px;
-        font-size: 20px;
+        font-size: 30px;
         font-family: "Patrick Hand", cursive;
 
         &:hover {
-          background-color: inherit;
+          background-color: #4c91ad;
           cursor: pointer;
         }
       }
