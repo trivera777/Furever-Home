@@ -1,5 +1,7 @@
 import './navbar.scss'
 import {useAuth} from '../../context/AuthContext';
+import Button from 'react-bootstrap/Button'
+
 export default function Navbar({ menuOpen, setMenuOpen }){
     const {isLoggedIn, currentUser, logout} = useAuth();
     console.log(isLoggedIn, currentUser);
@@ -11,12 +13,13 @@ export default function Navbar({ menuOpen, setMenuOpen }){
                 Furever Home <img src='./img/paw.gif' alt="Paw"></img>
                 </a>
             </div>
+            
             {isLoggedIn && 
                 <>
                     <div>
-                        <span>logged in: {currentUser?.username}</span>
+                        <span>Welcome, {currentUser?.username}</span>
                         {' '}
-                        <button onClick={logout}>logout</button>
+                        <Button variant="danger" onClick={logout}>LOGOUT</Button>
                     </div>
                 </>
             } 

@@ -1,34 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+
 .home {
+  height: 100vh;
+  background-image: url("../../assets/sun.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .container {
+    position: sticky;
+    top: 130px;
+    margin-left: 30px;
 
     .header {
-        display: flex;
-        font-size: 30px;
-        width: 400px;
-        height: 300px;
-        padding: 30px 30px;
-        border-radius: 60px 100px;
-        background-color:darkseagreen;
-        color: #fff;
+      font-size: 30px;
+      width: 400px;
+      height: 280px;
+      padding: 40px;
+      justify-content: center;
+      align-content: center;
+      border-radius: 70px 150px;
+      font-family: "Patrick Hand", cursive;
+      background-color: #ffffff10;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: #fff;
     }
 
-    .container {
-        display: flex;
-        background-color: orchid;
-        width: 100%;
-        height: 100%;
-        justify-content:stretch;
-
-
-            .ul {
-
-
-                .li {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-            }
-
-
+    .homeContainer {
+      display: flex;
+      background-color: lavender;
     }
+  }
+
 }
