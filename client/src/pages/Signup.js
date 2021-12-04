@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
-import { CREATE_USER } from '../utils/mutation';
-import Auth from '../utils/auth';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
+import { CREATE_USER } from "../utils/mutation";
+import Auth from "../utils/auth";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
-
+import './signup.scss'
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    username: '',
-    email: '',
-    password: '',
+    username: "",
+    email: "",
+    password: "",
   });
   const [addUser, { error, data }] = useMutation(CREATE_USER);
 
@@ -42,22 +42,19 @@ const Signup = () => {
   };
 
   return (
-    <div className="container" 
-    style={{ 
-      width: "550px",
-      fontSize: "25px"
-      }}>
+    <main className="signup" id="signup">
+    <div className="container">
       <Card>
-        <Card.Header bg="info">Sign Up</Card.Header>
+        <Card.Header>Sign Up</Card.Header>
         <Card.Body>
-            {data ? (
-              <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
-              </p>
-            ) : (
-              <Form onSubmit={handleFormSubmit}>
-               <Form.Group className="mb-3">
+          {data ? (
+            <Form>
+              Success! You may now head{" "}
+              <Link to="/">back to the homepage.</Link>
+            </Form>
+          ) : (
+            <Form onSubmit={handleFormSubmit}>
+              <Form.Group className="mb-3">
                 <Form.Label>Username</Form.Label>
                 <Form.Control
                   className="form-input"
@@ -66,9 +63,9 @@ const Signup = () => {
                   type="text"
                   value={formState.name}
                   onChange={handleChange}
-                  />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
                   className="form-input"
@@ -78,8 +75,8 @@ const Signup = () => {
                   value={formState.email}
                   onChange={handleChange}
                 />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
                 <Form.Control
                   className="form-input"
@@ -89,21 +86,23 @@ const Signup = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                </Form.Group>
-                <Button variant="outline-dark" type="submit">
+              </Form.Group>
+              <Button variant="outline-dark" type="submit">
                 Submit
               </Button>
-              </Form>
-            )}
+            </Form>
+          )}
 
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
-            )}
-           </Card.Body>
+          {error && (
+            <Card>
+              <Card.Header>Sign Up</Card.Header>
+              {error.message}
+            </Card>
+          )}
+        </Card.Body>
       </Card>
     </div>
+    </main>
   );
 };
 
