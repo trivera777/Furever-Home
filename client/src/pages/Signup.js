@@ -44,9 +44,9 @@ const Signup = () => {
   return (
     <main className="signup" id="signup">
     <div className="container">
-      <Card>
-        <Card.Header>Sign Up</Card.Header>
-        <Card.Body>
+    <Card>
+        <div className="title">Sign Up</div>
+        <div className="cardBody">
           {data ? (
             <Form>
               Success! You may now head{" "}
@@ -99,7 +99,7 @@ const Signup = () => {
               {error.message}
             </Card>
           )}
-        </Card.Body>
+        </div>
       </Card>
     </div>
     </main>

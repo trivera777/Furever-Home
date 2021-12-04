@@ -49,14 +49,8 @@ const Login = (props) => {
     <div className="container">
       
     <Card>
-        <Card.Header>Login</Card.Header>
-        <Card.Body>
-          {data ? (
-            <p>
-              Success! You may now head{" "}
-              <Link to="/">back to the homepage.</Link>
-            </p>
-          ) : (
+        <div className="title">Login</div>
+        <div className="cardBody">
             <Form onSubmit={handleFormSubmit}>
               <Form.Group className="mb-3">
                 <Form.Label>Email address</Form.Label>
@@ -80,16 +74,15 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
               </Form.Group>
-              <Button variant="outline-dark" type="submit">
+              <button variant="outline-dark" type="submit">
                 Submit
-              </Button>
+              </button>
             </Form>
-          )}
 
           {error && (
             <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
           )}
-        </Card.Body>
+        </div>
       </Card>
     </div>
   </main>
