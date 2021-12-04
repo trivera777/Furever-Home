@@ -1,5 +1,7 @@
 import Form from "react-bootstrap/Form";
-import './adopt.scss'
+import './adopt.scss';
+
+
 const Adopt = () => {
   return (
     <main className="adopt" id="adopt">
