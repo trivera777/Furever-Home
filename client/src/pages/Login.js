@@ -6,6 +6,7 @@ import { useAuth } from "../context/AuthContext";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
+import './login.scss'
 
 const Login = (props) => {
   const { login: userLogin } = useAuth();
@@ -43,7 +44,7 @@ const Login = (props) => {
   };
 
   return (
-      <Card>
+      <Card className="container">
         <Card.Header>Login</Card.Header>
         <Card.Body>
           {data ? (

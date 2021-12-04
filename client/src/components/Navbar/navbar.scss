@@ -2,9 +2,8 @@
 
 .navbar {
   width: 100%;
-  padding-right: 50px;
-  background-color: #fff;
-  color: #000;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #fff;
   position: fixed;
   z-index: 3;
   transition: all 1s ease;
@@ -19,7 +18,7 @@
       align-items: center;
 
       .logo {
-        font-size: 45px;
+        font-size: 50px;
         font-weight: 700;
         text-decoration: none;
         color: inherit;
@@ -31,6 +30,8 @@
       img {
         width: 60px;
         height: 60px;
+        -webkit-filter: invert(1);
+        filter: invert(1);
       }
     }
 
@@ -58,12 +59,6 @@
   &.active {
     background-color: rgba(0, 0, 0, 0.29);
     color: white;
-
-    img {
-      -webkit-filter: invert(1);
-      filter: invert(1);
-      transition: all 1s ease;
-      }
 
     .hamburger {
       span {
