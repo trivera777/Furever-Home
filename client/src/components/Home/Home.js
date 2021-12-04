@@ -3,6 +3,7 @@ import './home.scss'
 import { useState } from 'react'
 import { Container, Row, Column, Card} from 'react-bootstrap'
 import SearchForm from '../SearchForm/SearchForm'
+import API from '../../utils/API'
 
 
 export default function Home(){
@@ -10,7 +11,8 @@ export default function Home(){
     const [pets, setPets] = useState('')
     const [breed,setBreed] = useState('')
     const [zip, setZip] = useState('')
-    const [distance,setDistance] = useState()
+    const [distance,setDistance] = useState('')
+    const [result, setResult] = useState('')
     
     const handleInputChange = (e) => {
         // Getting the value and name of the input which triggered the change
@@ -34,7 +36,15 @@ export default function Home(){
         else {setDistance(inputValue); }
       };
 
+      const searchPets = ()=> {
+        API.search()
+        .then((res) => {
+            setResult(res.data)
+            console.log(res.data)
+        })
+        .catch((err) => console.log(err));
 
+      }
       const handleFormSubmit =(e) => {
         e.preventDefault();  
         console.log(pets)

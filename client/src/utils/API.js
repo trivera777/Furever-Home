@@ -8,9 +8,19 @@ const headers = {
     'Authorization': `${APIKEY}`
 }
 
+const data = {
+    "data": {
+        "filterRadius":
+        	{
+        		"miles": 100,
+        		"postalcode": 90210
+        	}
+        
+    }
+}
 
-
-const search = async (query) =>
-  axios.post(`${BASEURL}${query}`, headers, data);
-
+// const search = async (query) =>
+const search = async () =>
+//   axios.post(`${BASEURL}${query}`, headers, data);
+axios.get('https://api.rescuegroups.org/v5/public/animals/search/available/cats/haspic/?sort=random&limit=10', headers,data)
 export default { search };
