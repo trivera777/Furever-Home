@@ -7,6 +7,7 @@ import Auth from "../utils/auth";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
+import './signup.scss'
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -41,13 +42,8 @@ const Signup = () => {
   };
 
   return (
-    <div
-      className="sections"
-      style={{
-        width: "550px",
-        fontSize: "25px",
-      }}
-    >
+    <main className="signup" id="signup">
+    <div className="container">
       <Card>
         <Card.Header>Sign Up</Card.Header>
         <Card.Body>
@@ -106,6 +102,7 @@ const Signup = () => {
         </Card.Body>
       </Card>
     </div>
+    </main>
   );
 };
 

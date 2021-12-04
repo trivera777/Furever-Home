@@ -2,19 +2,21 @@
 
 .navbar {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.05);
   color: #fff;
   position: fixed;
   z-index: 3;
   transition: all 1s ease;
+  background-color: transparent;
+  
 
   .wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: transparent;
+    
 
     .left {
-      display: flex;
       align-items: center;
 
       .logo {
@@ -57,7 +59,7 @@
   }
 
   &.active {
-    background-color: rgba(0, 0, 0, 0.29);
+    background-color: rgba(0, 0, 0, 0);
     color: white;
 
     .hamburger {

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
 
 .home {
   height: 100vh;
@@ -7,27 +7,30 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-
   .container {
-        position: sticky;
-        top: 130px;
-        margin-left: 30px;
+    position: sticky;
+    top: 130px;
+    margin-left: 30px;
+
+    .header {
+      font-size: 30px;
+      width: 400px;
+      height: 280px;
+      padding: 40px;
+      justify-content: center;
+      align-content: center;
+      border-radius: 70px 150px;
+      font-family: "Patrick Hand", cursive;
+      background-color: #ffffff10;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: #fff;
     }
 
-  .header {
-    font-size: 30px;
-    width: 400px;
-    height: 280px;
-    padding: 40px;
-    justify-content: center;
-    align-content: center;
-    border-radius: 70px 150px;
-    font-family: 'Patrick Hand', cursive;
-    background-color: #ffffff10;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    color: #fff;
+    .homeContainer {
+      display: flex;
+      background-color: lavender;
+    }
   }
 
-  
 }
