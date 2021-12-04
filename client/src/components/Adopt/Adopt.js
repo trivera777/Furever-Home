@@ -1,26 +1,34 @@
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
+import Form from "react-bootstrap/Form";
 import './adopt.scss'
-
-export default function Adopt(){
-    return(
-        <div className="adopt" id="adopt">
-            <div className="wrapper">
-                Available Pets
-                <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                    <Card.Title>Name</Card.Title>
-                    <Card.Text>
-                    Description of animal
-                    </Card.Text>
-                    <Button variant="primary">Adopt Me</Button>
-                </Card.Body>
-                </Card>
-            </div>
-
-        </div>
-        // <>
-        // </>
-    )
-}
+const Adopt = () => {
+  return (
+    <main className="adopt" id="adopt">
+      <div className="container">
+        <Form>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Adoption Application</Form.Label><br/>
+            <Form.Control type="firstName" placeholder="Enter first name" />
+            <Form.Text className="text-muted"><br/>
+              We'll never share your information with anyone else.
+            </Form.Text>
+          </Form.Group><br/>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Adoption Application</Form.Label><br/>
+            <Form.Control type="firstName" placeholder="Enter first name" />
+            <Form.Text className="text-muted"><br/>
+              We'll never share your information with anyone else.
+            </Form.Text>
+          </Form.Group><br/>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label><br/>
+            <Form.Control type="password" placeholder="Password" />
+          </Form.Group><br/>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </div>
+    </main>
+  );
+};
+export default Adopt;

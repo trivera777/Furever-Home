@@ -61,7 +61,9 @@ export default function Home(){
                     a snuggle buddy - small or large, 
                     we'll help you find your forever friend!
                 </div>
-                
+                <div className="homeContainer">
+                    Info
+                </div>
                 <SearchForm pets={pets} breed={breed} zip={zip} distance={distance} handleInputChange={handleInputChange} handleFormSubmit={handleFormSubmit}/>
             </div>
             
