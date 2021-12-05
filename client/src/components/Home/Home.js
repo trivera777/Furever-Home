@@ -36,8 +36,8 @@ export default function Home(){
         else {setDistance(inputValue); }
       };
 
-      const searchPets = ()=> {
-        API.search()
+      const searchPets = (pets, breed, zip, distance)=> {
+         API.search(pets, breed, zip, distance)
         .then((res) => {
             setResult(res.data)
             console.log(res.data)
@@ -51,7 +51,7 @@ export default function Home(){
           console.log(breed)
           console.log(zip)
           console.log(distance)
-          searchPets()
+          searchPets(pets, breed, zip, distance)
       }
     return (
         <div className="home" id="home">
@@ -61,9 +61,7 @@ export default function Home(){
                     a snuggle buddy - small or large, 
                     we'll help you find your forever friend!
                 </div>
-                <div className="homeContainer">
-                    Info
-                </div>
+                
                 <SearchForm pets={pets} breed={breed} zip={zip} distance={distance} handleInputChange={handleInputChange} handleFormSubmit={handleFormSubmit}/>
             </div>
             
