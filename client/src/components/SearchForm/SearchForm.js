@@ -7,8 +7,8 @@ function SearchForm(props) {
         
         <label htmlFor="petType">Choose a pet:</label>
         <select id="pets" name="pets" value={props.pets} onChange={props.handleInputChange}>
-          <option value="dogs" >Dogs</option>
-          <option value="cats" >Cats</option>
+          <option value="dog" >Dogs</option>
+          <option value="cat" >Cats</option>
           {/* <option value="Birds">Fiat</option>
           <option value="Reptiles">Audi</option> */}
         </select>

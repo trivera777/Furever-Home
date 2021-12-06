@@ -1,19 +1,22 @@
 import React from 'react'
 import './home.scss'
-import { useState } from 'react'
-import { Container, Row, Column, Card} from 'react-bootstrap'
+import { useState, useEffect,useContext } from 'react'
+import { Container, Row, Col, Card} from 'react-bootstrap'
 import SearchForm from '../SearchForm/SearchForm'
 import API from '../../utils/API'
-
+import { usePetAuth } from '../../utils/PetAuthContext'
 
 export default function Home(){
+  // const [accessToken, setAccessToken] = useState(''); 
+  const [pets, setPets] = useState('')
+  const [breed,setBreed] = useState('')
+  const [zip, setZip] = useState('')
+  const [distance,setDistance] = useState('')
+ 
+  const [results, setResults] = useState('');
+  const {accessToken} = usePetAuth();
     
-    const [pets, setPets] = useState('')
-    const [breed,setBreed] = useState('')
-    const [zip, setZip] = useState('')
-    const [distance,setDistance] = useState('')
-    const [result, setResult] = useState('')
-    
+
     const handleInputChange = (e) => {
         // Getting the value and name of the input which triggered the change
         const { target } = e;
@@ -36,22 +39,24 @@ export default function Home(){
         else {setDistance(inputValue); }
       };
 
-      const searchPets = (pets, breed, zip, distance)=> {
-         API.search(pets, breed, zip, distance)
-        .then((res) => {
-            setResult(res.data)
-            console.log(res.data)
-        })
-        .catch((err) => console.log(err));
+      const searchPets = async(pets, breed, zip, distance)=> {
+        console.log(accessToken)
+        const petResults = await fetch(
+          `https://api.petfinder.com/v2/animals?type=${pets}&location=${zip}&breed=${breed}&distance=${distance}`,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          }
+        );
+        const json = await petResults.json();
+        setResults(json.animals);
+        console.log(json.animals)
 
       }
       const handleFormSubmit =(e) => {
         e.preventDefault();  
-        console.log(pets)
-          console.log(breed)
-          console.log(zip)
-          console.log(distance)
-          searchPets(pets, breed, zip, distance)
+        searchPets(pets, breed, zip, distance)
       }
     return (
         <div className="home" id="home">
@@ -66,5 +71,7 @@ export default function Home(){
             </div>
             
         </div>
+        
+        
     )
 }
