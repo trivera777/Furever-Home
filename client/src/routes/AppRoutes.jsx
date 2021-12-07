@@ -5,6 +5,7 @@ import Signup from '../pages/Signup';
 import RequireAuth from '../components/RequireAuth';
 import Home from '../components/Home/Home'
 import PrivatePage from '../pages/PrivatePage';
+import PetDetail from '../pages/PetDetail'
 import {PetAuthProvider } from '../utils/PetAuthContext';
 
 const AppRoutes= ({children}) => {
@@ -17,6 +18,7 @@ return (
 				<Route exact path="/adopt" element={<Adopt/>}/>
 				<Route exact path="/login" element={<Login/>}/>
 				<Route exact path="/signup" element={<Signup/>}/>
+				<Route exact path="/detail/:id" element={<PetDetail/>}/>
 				<Route exact path="/private" 
 					element={
 						<RequireAuth>

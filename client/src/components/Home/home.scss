@@ -1,11 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
 
+body {
+  height: 100vh;
+  background-image: url("../../assets/sun.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .home {
   height: 100vh;
   background-image: url("../../assets/sun.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 
   .container {
     position: sticky;
@@ -42,9 +52,11 @@
       margin-right: auto;
       
     }
-    form label {
+    label {
       color: white;
-      text-align: right
+      text-align: right;
+      align-content: right;
+      justify-content: right
     }
     
   }
