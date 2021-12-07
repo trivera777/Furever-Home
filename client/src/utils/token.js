@@ -1,3 +1,6 @@
+
+// To be deleted.. I am calling this code inline within home.js
+
 // import { petFinderKey, petFinderSecret } from "../../api-keys";
 const petFinderKey = 'x5HLqYqM8HDHJ5m2id99hhR1oDJkk8osNlLESGenCvBuiZSQVP'    //process.env.PETFINDER_KEY;
 const petFinderSecret = 'q3IabuCTq4c1KAjC3jViKNluLYxQNYSP7FCfVJCs' //process.env.PETFINDER_SECRET;

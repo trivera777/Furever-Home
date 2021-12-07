@@ -32,23 +32,24 @@
       background-color: lavender;
     }
 
+    form input {
+      display: block;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      width: 20%;
+      align-content: left;
+      margin-left: auto;
+      margin-right: auto;
+      
+    }
+    form label {
+      color: white;
+      text-align: right
+    }
     
   }
 
   
   
-  form input {
-    display: block;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width: 20%;
-    align-content: left;
-    margin-left: auto;
-    margin-right: auto;
-    
-  }
-  form label {
-    color: white;
-    text-align: right
-  }
+  
 }
