@@ -5,7 +5,7 @@ import {useAuth} from '../../context/AuthContext';
 
 export default function Header(){
     const {isLoggedIn, currentUser, logout} = useAuth();
-    console.log(isLoggedIn, currentUser);
+    // console.log(isLoggedIn, currentUser);
     return (
         <Navbar bg="light" expand="lg">
         <Container>

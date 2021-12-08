@@ -105,7 +105,7 @@ export default function Home() {
                 <Pet key={pet.id} pet={pet} />
 
               )
-            })})
+            })}
                   </Row>
         </Container>
       </div>
