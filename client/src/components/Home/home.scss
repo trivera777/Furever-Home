@@ -3,18 +3,8 @@
 
 @media only screen and (max-width: 900px) {
   .header{
-      align-items: flex-start;
+      display: none;
   }
-}
-
-
-body {
-  height: 100vh;
-  background-image: url("../../assets/sun.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 .home {
@@ -26,9 +16,7 @@ body {
   background-attachment: fixed;
 
   .container {
-    position: sticky;
-    top: 130px;
-    margin-left: 30px;
+  
     
     .header {
       font-size: 30px;

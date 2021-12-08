@@ -1,7 +1,7 @@
 import React from 'react'
 import './home.scss'
 import { useState, useEffect, useContext } from 'react'
-import { Container, Row } from 'react-bootstrap'
+import { Container, Row, Form } from 'react-bootstrap'
 import SearchForm from '../SearchForm/SearchForm'
 import API from '../../utils/API'
 import { usePetAuth } from '../../utils/PetAuthContext'
@@ -86,8 +86,10 @@ export default function Home() {
            
 
             <div className='col-4'>
+              <Form>
 
               <SearchForm pets={pets} breed={breed} zip={zip} distance={distance} handleInputChange={handleInputChange} handleFormSubmit={handleFormSubmit} />
+              </Form>
             </div>
         </div>
         
