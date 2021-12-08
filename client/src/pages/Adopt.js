@@ -6,12 +6,8 @@ import './adopt.scss'
 
 const Adopt = () => {
   return (
-    <main className="adopt" id="adopt">
-      <div className="container">
-
-      <Card>
-        <div className="title">Adoption Form</div>
-        <div className="cardBody">
+    <main className="background" id="adopt">
+      <div className="formBody">
           <Form>
             {/* <Form onSubmit={handleFormSubmit}> */}
               <Form.Group className="mb-3">
@@ -55,8 +51,7 @@ const Adopt = () => {
           {error && (
             <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
           )} */}
-        </div>
-      </Card>
+       
       </div>
     </main>
   );
