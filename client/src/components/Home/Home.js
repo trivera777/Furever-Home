@@ -71,9 +71,7 @@ export default function Home() {
     
     <div className="home" id="home">
       <div className="container">
-        
           <div className='row'>
-          
             <div className='col-8'>
                <div className="header">
               Whether you're looking for a hiking buddy,

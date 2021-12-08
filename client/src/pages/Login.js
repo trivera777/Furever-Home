@@ -45,13 +45,10 @@ const Login = (props) => {
   };
 
   return (
-    <main className="login" id="login">
-    <div className="container">
-      
-    <Card>
-        <div className="title">Login</div>
-        <div className="cardBody">
-            <Form onSubmit={handleFormSubmit}>
+    <main className="background" id="login">
+    <div className="formBody">
+            <Form className="mb-3" onSubmit={handleFormSubmit}>
+            <Form.Label className="title">Login</Form.Label>
               <Form.Group className="mb-3">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
@@ -63,7 +60,7 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group className="mb-5" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
                 <Form.Control
                   className="form-input"
@@ -83,8 +80,6 @@ const Login = (props) => {
             <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
           )}
         </div>
-      </Card>
-    </div>
   </main>
   );
 };
