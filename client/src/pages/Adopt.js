@@ -1,21 +1,14 @@
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import Card from "react-bootstrap/Card";
 
-import './adopt.scss'
 
 const Adopt = () => {
   return (
-    <main className="adopt" id="adopt">
-      <div className="container">
-
-      <Card>
-        <div className="title">Adoption Form</div>
-        <div className="cardBody">
-          <Form>
-            {/* <Form onSubmit={handleFormSubmit}> */}
+    <main className="background" id="adopt">
+      <div className="formBody" style={{ height: "500px"}}>
+      <Form className="mb-3">
+            <Form.Label className="title">Adoption Form</Form.Label>
               <Form.Group className="mb-3">
-                <Form.Label>First Name</Form.Label>
+                <Form.Label>Email address</Form.Label>
                 <Form.Control
                   className="form-input"
                   placeholder="First Name"
@@ -51,12 +44,6 @@ const Adopt = () => {
                 Submit
               </button>
               </Form>
-{/* 
-          {error && (
-            <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
-          )} */}
-        </div>
-      </Card>
       </div>
     </main>
   );
