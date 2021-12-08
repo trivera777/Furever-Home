@@ -1,7 +1,8 @@
 import { createContext, useState, useContext, useEffect } from "react";
-import token from './token'
-const petFinderKey = 'x5HLqYqM8HDHJ5m2id99hhR1oDJkk8osNlLESGenCvBuiZSQVP'    //process.env.PETFINDER_KEY;
-const petFinderSecret = 'q3IabuCTq4c1KAjC3jViKNluLYxQNYSP7FCfVJCs' //process.env.PETFINDER_SECRET;
+
+
+const petFinderKey = 'GDqDG1ZrAE2oA2D1zSfP96XsKcu80r3RxUftUriTPOBNB5a7T8';
+const petFinderSecret = '2YCsDdJVKrnPF4EzJlJbXwr9aMHVmDC0Tu6iuJ00' ;
 
 
 export const PetAuthContext = createContext();
@@ -11,7 +12,7 @@ export const PetAuthProvider = ({children }) => {
   
   useEffect(() => {
     console.log("Inside PethAuthContext")
-  
+    console.log(petFinderKey,petFinderSecret )
   
   const fetchAccessToken = async () => {
     
@@ -23,10 +24,17 @@ export const PetAuthProvider = ({children }) => {
     
     const petfinderRes = await fetch(
     "https://api.petfinder.com/v2/oauth2/token",
+    
     {
       method: "POST",
       body: params,
+      // headers: {
+      //   'Access-Control-Allow-Origin': '*'
+      // },
+      
     }
+    
+  
   );
     const data = await petfinderRes.json();
     // const json = await res.json();

@@ -43,10 +43,11 @@ export default function Home() {
   const searchPets = async (pets, breed, zip, distance) => {
     console.log(accessToken)
     const petResults = await fetch(
-      `https://api.petfinder.com/v2/animals?type=${pets}&location=${zip}&breed=${breed}&distance=${distance}`,
+      `https://api.petfinder.com/v2/animals?type=${pets}&location=${zip}`, //&breed=${breed}&distance=${distance}`,
       {
         headers: {
-          Authorization: `Bearer ${accessToken}`,
+          'Authorization': `Bearer ${accessToken}`
+          // 'Access-Control-Allow-Origin': '*'
         },
       }
     );
@@ -67,42 +68,13 @@ export default function Home() {
     searchPets(pets, breed, zip, distance)
   }
   return (
-    // <div className="home" id="home">
-    //     <div className="container">
-    //         <div className="header">
-    //             Whether you're looking for a hiking buddy, 
-    //             a snuggle buddy - small or large, 
-    //             we'll help you find your forever friend!
-    //         </div>
-
-    //         <SearchForm pets={pets} breed={breed} zip={zip} distance={distance} handleInputChange={handleInputChange} handleFormSubmit={handleFormSubmit}/>
-
-    //         <Container fluid ="md">
-    //               <Row className ="my-3 mx-3">
-    //               <h2>
-    //                 {results.length
-    //                   ? `Viewing ${results.length} pets:`
-    //                   : 'No Pets found, please change search criteria'}
-    //               </h2>
-    //                   {/* {console.log(petData.length)} */}
-    //                 {results.map((pet) => {
-    //                   return (
-
-    //                     <Pet key={pet.id} pet={pet}/>
-
-    //                   )
-    //                 })})
-    //               </Row>
-    //         </Container>
-    //     </div>
-
-    // </div>
+    
     <div className="home" id="home">
       <div className="container">
         
           <div className='row'>
           
-            <div className='col-6'>
+            <div className='col-8'>
                <div className="header">
               Whether you're looking for a hiking buddy,
               a snuggle buddy - small or large,
@@ -113,7 +85,7 @@ export default function Home() {
 
            
 
-            <div className='col-6'>
+            <div className='col-4'>
 
               <SearchForm pets={pets} breed={breed} zip={zip} distance={distance} handleInputChange={handleInputChange} handleFormSubmit={handleFormSubmit} />
             </div>
