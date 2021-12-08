@@ -1,11 +1,7 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
-import './searchForm.scss'
 
 function SearchForm(props) {
   return (
-    <Form>
-      <Form.Group className="mb-3">
     <form onSubmit={props.handleFormSubmit}>
       <div className="form-group">
         
@@ -62,8 +58,6 @@ function SearchForm(props) {
          
       </div>
     </form>
-    </Form.Group>
-    </Form>
   );
 }
 

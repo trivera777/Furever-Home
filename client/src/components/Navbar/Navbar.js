@@ -3,15 +3,28 @@ import { Navbar, Button, Nav } from 'react-bootstrap';
 import {Container} from 'react-bootstrap';
 import {useAuth} from '../../context/AuthContext';
 
+
 export default function Header(){
     const {isLoggedIn, currentUser, logout} = useAuth();
     console.log(isLoggedIn, currentUser);
     return (
         <Navbar bg="light" expand="lg">
         <Container>
-            <Navbar.Brand className="logo" href="/">
+            <Navbar.Brand style={{
+                 fontSize: "40px",
+                 fontWeight: "700",
+                 textDecoration: "none",
+                 color: "inherit",
+                 fontFamily: "Gloria Hallelujah, cursive",
+                 alignItems: "center"
+            }} href="/">
                 Furever Home
-                <img src='./img/paw.gif' alt="Paw"></img>
+                <img 
+                src='./img/paw.gif' 
+                alt="Paw"
+                style={{
+                    width: "60px"
+                }}></img>
                 {isLoggedIn && 
             <>
                 <div>
