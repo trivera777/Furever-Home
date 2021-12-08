@@ -46,12 +46,11 @@ const Login = (props) => {
 
   return (
     <main className="login" id="login">
-    <div className="container">
       
-    <Card>
-        <div className="title">Login</div>
-        <div className="cardBody">
-            <Form onSubmit={handleFormSubmit}>
+          
+            <Form 
+            className="loginBody"
+            onSubmit={handleFormSubmit}>
               <Form.Group className="mb-3">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
@@ -74,17 +73,16 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
               </Form.Group>
-              <button variant="outline-dark" type="submit">
+              <Button variant="outline-dark" type="submit">
                 Submit
-              </button>
+              </Button>
             </Form>
+           
 
           {error && (
             <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
           )}
-        </div>
-      </Card>
-    </div>
+       
   </main>
   );
 };

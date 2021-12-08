@@ -1,24 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
-html,
-body,
-#root {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
-}
+// html,
+// body,
+// #root {
+//   width: 100%;
+//   height: 100%;
+//   margin: 0;
+//   padding: 0;
+//   font-family: "Roboto", Arial, Helvetica, sans-serif;
+// }
 
-.login {
-    display: flex;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  background-color: #4c91ad;
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+// .login {
+//     display: flex;
+//   width: 100vw;
+//   height: 100vh;
+//   justify-content: center;
+//   background-color: #4c91ad;
+//   font-family: "Roboto", Arial, Helvetica, sans-serif;
 
-  .container {
+  .loginBody {
     display: flex;
     width: 500px;
     height: 430px;
@@ -28,35 +28,36 @@ body,
     align-content: center;
     background-color: #fff;
     font-family: "Patrick Hand", cursive;
-
-    .title {
-      font-size: 70px;
-      text-align: center;
-      
-    }
-
-    .cardBody{
-      display: flex;
-      font-size: 30px;
-      margin-top: 20px;
-
-      .form-input{
-        width: 100%;
-        font-size: 15px;
-        margin-bottom: 30px;
-      }
-
-      button {
-        border-radius: 10px;
-        font-size: 30px;
-        font-family: "Patrick Hand", cursive;
-
-        &:hover {
-          background-color: #4c91ad;
-          cursor: pointer;
-        }
-      }
-    }
   }
-}
+
+//     .title {
+//       font-size: 70px;
+//       text-align: center;
+      
+//     }
+
+//     .cardBody{
+//       display: flex;
+//       font-size: 30px;
+//       margin-top: 20px;
+
+//       .form-input{
+//         width: 100%;
+//         font-size: 15px;
+//         margin-bottom: 30px;
+//       }
+
+//       button {
+//         border-radius: 10px;
+//         font-size: 30px;
+//         font-family: "Patrick Hand", cursive;
+
+//         &:hover {
+//           background-color: #4c91ad;
+//           cursor: pointer;
+//         }
+//       }
+//     }
+//   }
+// }
 

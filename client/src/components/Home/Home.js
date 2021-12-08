@@ -1,7 +1,7 @@
 import React from 'react'
 import './home.scss'
 import { useState, useEffect, useContext } from 'react'
-import { Container, Row } from 'react-bootstrap'
+import { Container, Form, Row, Button } from 'react-bootstrap'
 import SearchForm from '../SearchForm/SearchForm'
 import API from '../../utils/API'
 import { usePetAuth } from '../../utils/PetAuthContext'
@@ -72,7 +72,7 @@ export default function Home() {
     <div className="home" id="home">
       <div className="container">
         
-          <div className='row'>
+          {/* <div className='row'>
           
             <div className='col-8'>
                <div className="header">
@@ -81,11 +81,9 @@ export default function Home() {
               we'll help you find your forever friend!
               </div>
 
-          </div>
-
-           
-
-            <div className='col-4'>
+          </div> */}
+     
+            <Form className="mb-3" >
               <SearchForm 
               pets={pets} 
               breed={breed} 
@@ -94,9 +92,8 @@ export default function Home() {
               handleInputChange={handleInputChange} 
               handleFormSubmit={handleFormSubmit} 
               />
-            </div>
-        </div>
-        
+        </Form>
+
         <Container fluid="md">
           <Row className="my-3 mx-3">
             <h2>
