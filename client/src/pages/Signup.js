@@ -4,10 +4,9 @@ import { useMutation } from "@apollo/client";
 import { CREATE_USER } from "../utils/mutation";
 import Auth from "../utils/auth";
 
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
-import './signup.scss'
+import './form.scss'
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -42,18 +41,16 @@ const Signup = () => {
   };
 
   return (
-    <main className="signup" id="signup">
-    <div className="container">
-    <Card>
-        <div className="title">Sign Up</div>
-        <div className="cardBody">
+    <main className="background" id="signup">
+    <div className="formBody" style={{ height: "500px"}}>
           {data ? (
             <Form>
               Success! You may now head{" "}
               <Link to="/">back to the homepage.</Link>
             </Form>
           ) : (
-            <Form onSubmit={handleFormSubmit}>
+            <Form className="mb-3" onSubmit={handleFormSubmit}>
+              <Form.Label className="title">Sign Up</Form.Label>
               <Form.Group className="mb-3">
                 <Form.Label>Username</Form.Label>
                 <Form.Control
@@ -87,9 +84,9 @@ const Signup = () => {
                   onChange={handleChange}
                 />
               </Form.Group>
-              <Button variant="outline-dark" type="submit">
+              <button variant="outline-dark" type="submit">
                 Submit
-              </Button>
+              </button>
             </Form>
           )}
 
@@ -99,8 +96,7 @@ const Signup = () => {
               {error.message}
             </Card>
           )}
-        </div>
-      </Card>
+    
     </div>
     </main>
   );

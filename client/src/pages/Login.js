@@ -4,10 +4,8 @@ import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutation";
 import { useAuth } from "../context/AuthContext";
 
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import Card from "react-bootstrap/Card";
-import './login.scss'
+import './form.scss'
 
 const Login = (props) => {
   const { login: userLogin } = useAuth();
