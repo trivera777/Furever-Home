@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
+@media only screen and (max-width: 900px) {
+  .formBody{
+      width: 100px;
+  }
+  .form-input {
+    width: 200px;
+  }
+}
+
 .background {
   display: flex;
   width: 100vw;
