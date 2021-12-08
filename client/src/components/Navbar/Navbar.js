@@ -1,4 +1,3 @@
-import './navbar.scss'
 import { Navbar, Button, Nav } from 'react-bootstrap';
 import {Container} from 'react-bootstrap';
 import {useAuth} from '../../context/AuthContext';
