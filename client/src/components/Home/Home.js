@@ -86,8 +86,14 @@ export default function Home() {
            
 
             <div className='col-4'>
-
-              <SearchForm pets={pets} breed={breed} zip={zip} distance={distance} handleInputChange={handleInputChange} handleFormSubmit={handleFormSubmit} />
+              <SearchForm 
+              pets={pets} 
+              breed={breed} 
+              zip={zip} 
+              distance={distance} 
+              handleInputChange={handleInputChange} 
+              handleFormSubmit={handleFormSubmit} 
+              />
             </div>
         </div>
         
