@@ -27,12 +27,16 @@ const Pet = ({ key, pet }) => {
                   <Card.Text>{pet.breed}{pet.description}</Card.Text>
                   <Card.Text>Distance: {pet.distance} Gender{pet.gender}  Age: {pet.age}</Card.Text>
                   <Card.Link href= {pet.url}>Favorite</Card.Link>
-                  <Card.Link href= {pet.github}>Learn more </Card.Link>
+                  <Card.Link href= {'/detail/'+pet.id}>Learn more </Card.Link>
                 
-                <button className="likeBtn" onClick={toggleLike}>
+                {/* <button className="likeBtn" onClick={toggleLike}>
                     <i className ="fas fa-heart fa-lg" style ={{color: changeColor}}></i>
-                </button>
-                 
+                </button> */}
+                 {/* < button className ="btn btn-primary" onClick ={{<Link to="/login">
+                            Log In
+                        </Link>}}>
+
+                 </button> */}
                 </Card.Body>
         </Card>
         
