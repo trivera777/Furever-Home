@@ -1,7 +1,6 @@
-import {  Card } from 'react-bootstrap';
-import { useState} from 'react';
+import Card from 'react-bootstrap/Card';
+import { useState } from 'react';
 import './pet.scss'
-import { FontAwesomeIcon } from '@fortawesome/fontawesome-free'
 
 const Pet = ({ key, pet }) => {
     
