@@ -8,15 +8,15 @@ export default function Header(){
     return (
         <Navbar bg="light" expand="lg">
         <Container>
-            <Navbar.Brand style={{fontSize: "40px", fontFamily: "Gloria Hallelujah, cursive"}} href="/"> 
-            Furever Home
-            <img src='./img/paw.gif' alt="Paw" style={{width: "60px"}}></img>
+            <Navbar.Brand style={{fontSize: "40px", float: "10px",fontFamily: "Gloria Hallelujah, cursive"}} href="/">
+                Furever Home
+                <img src='./img/paw.gif' alt="Paw" style={{ width: "60px" }}></img>
                 {isLoggedIn && 
                     <>
                     <div>
                         <span>Welcome, {currentUser?.username}</span>
                         {' '}
-                        <Button variant="danger" onClick={logout}>LOGOUT</Button>
+                        <Button variant="danger" onClick={logout}>Logout</Button>
                     </div>
                     </>
                 } 
