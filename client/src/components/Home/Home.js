@@ -1,11 +1,15 @@
 import React from 'react'
 import './home.scss'
 import { useState, useEffect, useContext } from 'react'
-import { Container, Row } from 'react-bootstrap'
+import { useMutation } from '@apollo/client'
+import { Container, Row, Card } from 'react-bootstrap'
 import SearchForm from '../SearchForm/SearchForm'
 import API from '../../utils/API'
 import { usePetAuth } from '../../utils/PetAuthContext'
 import Pet from '../Pet/Pet'
+import {SAVE_PET} from '../../utils/mutation'
+import {savePetIds, getSavedPetIds} from '../../utils/localStorage'
+import Auth from '../../utils/auth'
 
 export default function Home() {
   // const [accessToken, setAccessToken] = useState(''); 
@@ -17,6 +21,16 @@ export default function Home() {
   const [results, setResults] = useState([]);
   const { accessToken } = usePetAuth();
   // var petData =[]
+
+
+  const [savedPetIds, setSavedPetIds] = useState(getSavedPetIds()) 
+  const [savePet] = useMutation(SAVE_PET)
+
+  useEffect(() => {
+
+    return()=>savePetIds(savedPetIds)
+  }, )
+
 
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
@@ -58,15 +72,37 @@ export default function Home() {
 
   }
 
-  useEffect(() => {
-
-    console.log(results)
-  }, [results])
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     searchPets(pets, breed, zip, distance)
   }
+
+  const handleSavePet = async(petId) => {
+
+    const petToSave = results.find((pet) => pet.id ===petId)
+    
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+    
+        if (!token) {
+          return false;
+        }
+    
+        try {
+          console.log(petToSave, token)
+          const { data } = await savePet({variables: {PetInput: petToSave}});
+    
+          
+          console.log(data)
+          // if book successfully saves to user's account, save book id to state
+          setSavedPetIds([...savedPetIds, petToSave.petId]);
+        } catch (err) {
+          console.error(err);
+        }
+    
+    
+    }
+
   return (
     
     <div className="home" id="home">
@@ -89,23 +125,45 @@ export default function Home() {
             </div>
         </div>
         
-        <Container fluid="md">
-          <Row className="my-3 mx-3">
+        {/* <Container fluid="md"> */}
+          <Row className="my-1 mx-1">
             <h2>
               {results.length
                 ? `Viewing ${results.length} pets:`
-                : 'No Pets found, please change search criteria'}
+                : ''}
             </h2>
             {/* {console.log(petData.length)} */}
             {results.map((pet) => {
               return (
 
-                <Pet key={pet.id} pet={pet} />
+                // <Pet key={pet.id} pet={pet} />
+                <Card key={pet.id} style={{ width: '16rem', margin: "8px"}}>
+                {pet.photos.length? (
+                  <Card.Img src={pet.photos[0].small} alt={`The cover for ${pet.name}`} variant='top' />
+                ): null}
+                <Card.Body>
+                  <Card.Title>{pet.name}</Card.Title>
+                  {/* <p className='small'>Authors: {book.authors}</p> */}
+                  <Card.Text>{pet.breed}{pet.description}</Card.Text>
+                  <Card.Text>Distance: {pet.distance} Gender: {pet.gender}  Age: {pet.age}</Card.Text>
+                  <Card.Link href= {pet.url}>Favorite</Card.Link>
+                  <Card.Link href= {'/detail/'+pet.id}>Learn more </Card.Link>
+                
+                {/* <button className="likeBtn" onClick={toggleLike}>
+                    <i className ="fas fa-heart fa-lg" style ={{color: changeColor}}></i>
+                </button> */}
+                 {/* < button className ="btn btn-primary" onClick ={{<Link to="/login">
+                            Log In
+                        </Link>}}>
+
+                 </button> */}
+                </Card.Body>
+        </Card>
 
               )
             })}
                   </Row>
-        </Container>
+        {/* </Container> */}
       </div>
 
     </div>

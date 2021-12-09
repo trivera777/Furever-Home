@@ -9,6 +9,8 @@ function SearchForm(props) {
         <select className="form-control" id="pets" name="pets" value={props.pets} onChange={props.handleInputChange}>
           <option value="dog" >Dogs</option>
           <option value="cat" >Cats</option>
+          <option value="bird" >Birds</option>
+          <option value="rabbit" >Rabbits</option>
           {/* <option value="Birds">Fiat</option>
           <option value="Reptiles">Audi</option> */}
         </select>
