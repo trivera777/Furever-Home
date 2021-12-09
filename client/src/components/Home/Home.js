@@ -82,7 +82,8 @@ export default function Home() {
       contact_phone: pet.contact.phone,
       breed: pet.breeds.primary,
       size: pet.size,
-      distance: pet.distance
+      distance: pet.distance,
+      age: pet.age
 
 
     }))
