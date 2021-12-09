@@ -19,7 +19,7 @@ return (
 				<Route exact path="/login" element={<Login/>}/>
 				<Route exact path="/signup" element={<Signup/>}/>
 				<Route exact path="/detail/:id" element={<PetDetail/>}/>
-				<Route exact path="/private" 
+				<Route exact path="/favorites" 
 					element={
 						<RequireAuth>
 							<PrivatePage/>

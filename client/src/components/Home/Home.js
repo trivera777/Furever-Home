@@ -2,7 +2,7 @@ import React from 'react'
 import './home.scss'
 import { useState, useEffect, useContext } from 'react'
 import { useMutation } from '@apollo/client'
-import { Container, Row, Card } from 'react-bootstrap'
+import { Container, Row, Card, Button } from 'react-bootstrap'
 import SearchForm from '../SearchForm/SearchForm'
 import API from '../../utils/API'
 import { usePetAuth } from '../../utils/PetAuthContext'
@@ -66,10 +66,21 @@ export default function Home() {
       }
     );
     const json = await petResults.json();
-    setResults(json.animals);
+    // console.log(json.animals)
+    // setResults(json.animals);
     // console.log(results)
-    // const petData = Array.from(results)
 
+    const petData = json.animals.map((pet) => ({
+      type: pet.type,
+      description: pet.description,
+      petId: pet.id,
+      image: ( pet.photos?  pet.photos[0].small : '') ,
+      link: pet.url,
+      name: pet.name
+    }))
+    // const petData = Array.from(results)
+    setResults(petData);
+     console.log(petData)
   }
 
 
@@ -78,9 +89,10 @@ export default function Home() {
     searchPets(pets, breed, zip, distance)
   }
 
+  
   const handleSavePet = async(petId) => {
 
-    const petToSave = results.find((pet) => pet.id ===petId)
+    const petToSave = results.find((pet) => pet.petId ===petId)
     
     const token = Auth.loggedIn() ? Auth.getToken() : null;
     
@@ -88,17 +100,17 @@ export default function Home() {
           return false;
         }
     
-        try {
+        // try {
           console.log(petToSave, token)
+          // const { data } = await savePet({variables: {PetInput: petToSave}});
           const { data } = await savePet({variables: {PetInput: petToSave}});
-    
           
           console.log(data)
           // if book successfully saves to user's account, save book id to state
           setSavedPetIds([...savedPetIds, petToSave.petId]);
-        } catch (err) {
-          console.error(err);
-        }
+        // } catch (err) {
+        //   console.error(err);
+        // }
     
     
     }
@@ -138,16 +150,30 @@ export default function Home() {
 
                 // <Pet key={pet.id} pet={pet} />
                 <Card key={pet.id} style={{ width: '16rem', margin: "8px"}}>
-                {pet.photos.length? (
-                  <Card.Img src={pet.photos[0].small} alt={`The cover for ${pet.name}`} variant='top' />
+                {pet.image? (
+                  <Card.Img src={pet.image} alt={`The cover for ${pet.name}`} variant='top' />
                 ): null}
                 <Card.Body>
                   <Card.Title>{pet.name}</Card.Title>
                   {/* <p className='small'>Authors: {book.authors}</p> */}
                   <Card.Text>{pet.breed}{pet.description}</Card.Text>
                   <Card.Text>Distance: {pet.distance} Gender: {pet.gender}  Age: {pet.age}</Card.Text>
-                  <Card.Link href= {pet.url}>Favorite</Card.Link>
-                  <Card.Link href= {'/detail/'+pet.id}>Learn more </Card.Link>
+                  {
+                    Auth.loggedIn() && (
+                      <Button
+                      disabled={savedPetIds?.some((savedPetId) => savedPetId === pet.id)}
+                      className='btn btn-primary'
+                      onClick={() => handleSavePet(pet.petId)}>
+                       {savedPetIds?.some((savedPetId) => savedPetId === pet.id)
+                        ? 'Pet added to Favs'
+                        : 'Favorite this Pet'}
+                    </Button>   
+                    )
+                  }
+                  {/* <Card.Link href= {pet.url}>Favorite</Card.Link> */}
+                  
+                  {/* <Card.Link href= {'/detail/'+pet.id}>Learn more </Card.Link> */}
+                  <Card.Link href= {pet.url}>Learn more </Card.Link> 
                 
                 {/* <button className="likeBtn" onClick={toggleLike}>
                     <i className ="fas fa-heart fa-lg" style ={{color: changeColor}}></i>

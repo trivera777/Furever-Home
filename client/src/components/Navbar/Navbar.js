@@ -27,6 +27,7 @@ export default function Header(){
             <Nav.Link href="/adopt">Adoption Form</Nav.Link>
             <Nav.Link href="/login">Login</Nav.Link>
             <Nav.Link href="/signup">Signup</Nav.Link>
+            <Nav.Link href="/favorites">My Favorites</Nav.Link>
             </Nav>
             </Navbar.Collapse>
         </Container>
