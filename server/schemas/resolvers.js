@@ -47,9 +47,11 @@ const resolvers = {
       return { token, user };
     },
     savePet: async (parent, { PetInput }, context) => {
+      
+      console.log(PetInput, context.user)
       if (context.user) {
         
-
+        console.log(PetInput)
        const user=  await User.findOneAndUpdate(
           { _id: context.user._id },
           { $addToSet: { savedPets: PetInput } }

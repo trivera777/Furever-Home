@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutation";
 import { useAuth } from "../context/AuthContext";
+import Auth  from '../utils/auth'
 
 import Form from "react-bootstrap/Form";
 import './form.scss'
@@ -25,16 +26,19 @@ const Login = (props) => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     // console.log(formState);
-    try {
-      // const { data } = await login({
-      //   variables: { ...formState },
-      // });
-
+    // try {
+      console.log(formState)
+      const { data } = await login({
+        variables: { ...formState },
+      });
+      // console.log(data.login.token)
       userLogin({ username: formState.email, token: formState.password });
+      console.log(formState.email, data.loginUser.token)
+      Auth.login( formState.email, data.loginUser.token);
       navigate("/");
-    } catch (e) {
-      console.error(e);
-    }
+    // } catch (e) {
+    //   console.error(e);
+    // }
 
     setFormState({
       email: "",

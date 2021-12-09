@@ -24,7 +24,7 @@ export default function Home() {
 
 
   const [savedPetIds, setSavedPetIds] = useState(getSavedPetIds()) 
-  const [savePet] = useMutation(SAVE_PET)
+  const [savePet, {error}] = useMutation(SAVE_PET)
 
   useEffect(() => {
 
@@ -66,7 +66,7 @@ export default function Home() {
       }
     );
     const json = await petResults.json();
-    // console.log(json.animals)
+    console.log(json.animals)
     // setResults(json.animals);
     // console.log(results)
 
@@ -74,9 +74,17 @@ export default function Home() {
       type: pet.type,
       description: pet.description,
       petId: pet.id,
-      image: ( pet.photos?  pet.photos[0].small : '') ,
+      image: ( pet.photos.length?  pet.photos[0].medium : '') ,
       link: pet.url,
-      name: pet.name
+      name: pet.name,
+      gender: pet.gender,
+      contact_email: pet.contact.email,
+      contact_phone: pet.contact.phone,
+      breed: pet.breeds.primary,
+      size: pet.size,
+      distance: pet.distance
+
+
     }))
     // const petData = Array.from(results)
     setResults(petData);
@@ -101,13 +109,16 @@ export default function Home() {
         }
     
         // try {
-          console.log(petToSave, token)
+          console.log(petToSave)
           // const { data } = await savePet({variables: {PetInput: petToSave}});
-          const { data } = await savePet({variables: {PetInput: petToSave}});
-          
+          // const { data } = await savePet({variables: {PetInput: {petToSave}}});
+          console.log({type: petToSave.type, description: petToSave.description, petId: petToSave.petId.toString(), image: petToSave.image, link: petToSave.link, name: petToSave.name   })
+          const { data } = await savePet({variables: {PetInput: {type: petToSave.type, description: petToSave.description, petId: petToSave.petId.toString(), image: petToSave.image, link: petToSave.link, name: petToSave.name   }}});
+
+
           console.log(data)
           // if book successfully saves to user's account, save book id to state
-          setSavedPetIds([...savedPetIds, petToSave.petId]);
+          // setSavedPetIds([...savedPetIds, petToSave.petId]);
         // } catch (err) {
         //   console.error(err);
         // }
@@ -157,19 +168,28 @@ export default function Home() {
                   <Card.Title>{pet.name}</Card.Title>
                   {/* <p className='small'>Authors: {book.authors}</p> */}
                   <Card.Text>{pet.breed}{pet.description}</Card.Text>
-                  <Card.Text>Distance: {pet.distance} Gender: {pet.gender}  Age: {pet.age}</Card.Text>
+                  <Card.Text>
+                    Distance: {pet.distance} <br></br>
+                    Gender: {pet.gender}  <br></br>
+                    Age: {pet.age}<br></br>
+                    Size: {pet.size}<br></br>
+                    Breed: {pet.breed}<br></br>
+                  </Card.Text>
                   {
                     Auth.loggedIn() && (
                       <Button
-                      disabled={savedPetIds?.some((savedPetId) => savedPetId === pet.id)}
+                      disabled={savedPetIds?.some((savedPetId) => savedPetId === pet.petId)}
                       className='btn btn-primary'
                       onClick={() => handleSavePet(pet.petId)}>
-                       {savedPetIds?.some((savedPetId) => savedPetId === pet.id)
+                        {/* {console.log (savedPetIds)} */}
+                       {savedPetIds?.some((savedPetId) => savedPetId === pet.petId)
                         ? 'Pet added to Favs'
                         : 'Favorite this Pet'}
                     </Button>   
                     )
                   }
+                  <br></br>
+                  <br></br>
                   {/* <Card.Link href= {pet.url}>Favorite</Card.Link> */}
                   
                   {/* <Card.Link href= {'/detail/'+pet.id}>Learn more </Card.Link> */}

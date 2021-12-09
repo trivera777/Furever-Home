@@ -4,7 +4,7 @@ import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import RequireAuth from '../components/RequireAuth';
 import Home from '../components/Home/Home'
-import PrivatePage from '../pages/PrivatePage';
+import MyFavorites from '../pages/MyFavorites';
 import PetDetail from '../pages/PetDetail'
 import {PetAuthProvider } from '../utils/PetAuthContext';
 
@@ -22,7 +22,7 @@ return (
 				<Route exact path="/favorites" 
 					element={
 						<RequireAuth>
-							<PrivatePage/>
+							<MyFavorites/>
 						</RequireAuth>
 					}>
 				</Route>
