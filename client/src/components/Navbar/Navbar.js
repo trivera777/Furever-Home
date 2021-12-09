@@ -24,7 +24,7 @@ export default function Header(){
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-            <Nav.Link href="/adopt">Adoption Form</Nav.Link>
+            {/* <Nav.Link href="/adopt">Adoption Form</Nav.Link> */}
             <Nav.Link href="/login">Login</Nav.Link>
             <Nav.Link href="/signup">Signup</Nav.Link>
             <Nav.Link href="/favorites">My Favorites</Nav.Link>

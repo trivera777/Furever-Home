@@ -68,7 +68,7 @@ const MyFavorites = (() => {
         {!loading
             ? userData.savedPets.map((pet) => {
             return (
-              <Card key={pet.petId} border='dark'>
+              <Card key={pet.petId} style={{ width: '60rem', "margin-bottom": "10px" ,border:'dark'}}>
                 {pet.image ? <Card.Img src={pet.image} alt={`The image for ${pet.name}`} variant='top' /> : null}
                 <Card.Body>
                   <Card.Title>{pet.name}</Card.Title>
