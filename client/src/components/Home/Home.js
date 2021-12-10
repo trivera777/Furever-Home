@@ -2,7 +2,7 @@ import React from 'react'
 import './home.scss'
 import { useState, useEffect, useContext } from 'react'
 import { useMutation } from '@apollo/client'
-import { Container, Row, Card, Button } from 'react-bootstrap'
+import { Container, Row, Card, Button, Col } from 'react-bootstrap'
 import SearchForm from '../SearchForm/SearchForm'
 import API from '../../utils/API'
 import { usePetAuth } from '../../utils/PetAuthContext'
@@ -128,26 +128,27 @@ export default function Home() {
     }
 
   return (
-    
     <div className="home" id="home">
-      <div className="container">
-          <div className='row'>
-            <div className='col-8'>
-               <div className="header">
-              Whether you're looking for a hiking buddy,
-              a snuggle buddy - small or large,
-              we'll help you find your forever friend!
-              </div>
-
+    <Container>
+      <Row>
+          <div className="header">
+            Whether you're looking for a hiking buddy, a snuggle buddy - small
+            or large, we'll help you find your forever friend!
           </div>
+          <Col>
 
-           
-
-            <div className='col-4'>
-
-              <SearchForm pets={pets} breed={breed} zip={zip} distance={distance} handleInputChange={handleInputChange} handleFormSubmit={handleFormSubmit} />
-            </div>
+        <div>
+          <SearchForm
+            pets={pets}
+            breed={breed}
+            zip={zip}
+            distance={distance}
+            handleInputChange={handleInputChange}
+            handleFormSubmit={handleFormSubmit}
+          />
         </div>
+        </Col>
+      </Row>
         
         {/* <Container fluid="md"> */}
           <Row className="my-1 mx-1">
@@ -210,9 +211,7 @@ export default function Home() {
               )
             })}
                   </Row>
-        {/* </Container> */}
-      </div>
-
+        </Container> 
     </div>
   )
 }
