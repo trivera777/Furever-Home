@@ -1,12 +1,12 @@
 ## Table of Contents
 
 - [Installation Guide](#installation)
-- [Instructions](#instructions)
+- [Description](#description)
 - [Credits](#credits)
 - [License](#license)
 - [Questions](#questions)
 - [Contributing](#contributing)
-- [Tests](#tests)
+- [Tech](#tech)
 
 ## Deployed Link
 
@@ -19,11 +19,11 @@
 
 ## Installation Guide
 
-Fork the repository and then open the app using npm run develop.
+Fork the repository and then open the app. Then you need to preform an npm install so you have all the required packages. Then in the main directory use npm run develop to start the app.
 
-## Instructions
+## Description
 
-Use this app to find a Furever friend near you! Just enter in what kind of pet you are looking for, and what area and let the magic happen. All list of pets will be populated so you can make them your!
+Use this app to find a Furever friend near you! Just enter in what kind of pet you are looking for, and what area and let the magic happen. All of the pets will be populated so you can give them tier FurEver Home! The app calls the petfinder API and returns pets near you that are ready for their FurEver Home!
 
 ## Credits
 
@@ -68,6 +68,16 @@ If you have any questions or concerns reach me on [Github](https://github.com/tr
 [Satish Github](https://github.com/satishiyer31)<br>
 [Randy Github](https://github.com/ARevampedLifeCoding)
 
-## Tests
+## Tech Used
 
-Not at this time.
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![Apollo-GraphQL](https://img.shields.io/badge/-ApolloGraphQL-311C87?style=for-the-badge&logo=apollo-graphql)
+![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+<br>
