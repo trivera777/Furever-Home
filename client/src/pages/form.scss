@@ -1,11 +1,43 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
+@import "../global.scss";
 
-@media only screen and (max-width: 900px) {
-  .formBody{
-      width: 100px;
+.searchbackground {
+  width: 100%;
+  color: #fff;
+  font-size: 30px;
+  margin-top: 30px;
+  border-radius: 20px;
+  align-items: center;
+  display: inline-block;
+  justify-content: center;
+  backdrop-filter: blur(12px);
+  background-color: #ffffff10;
+  -webkit-backdrop-filter: blur(12px);
+  font-family: "Patrick Hand", cursive;
+
+  .formBody {
+    #pets {
+      font-size: 25px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
-  .form-input {
-    width: 200px;
+
+  .title {
+    font-size: 70px;
+  }
+
+  button {
+    border-radius: 10px;
+    font-size: 30px;
+    font-family: "Patrick Hand", cursive;
+
+    &:hover {
+      background-color: #f17d40;
+      cursor: pointer;
+    }
   }
 }
 
@@ -16,26 +48,32 @@
   justify-content: center;
   background-color: #4c91ad;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
-  
 
   .formBody {
     display: flex;
     width: 500px;
     height: 450px;
     font-size: 25px;
-    margin-top: 100px;
+    margin-top: 60px;
     border-radius: 100px 30px;
     justify-content: center;
     align-content: center;
     background-color: #fff;
     font-family: "Patrick Hand", cursive;
 
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+      height: 70%;
+    }
+
     .title {
       font-size: 70px;
     }
 
     .form-input {
-      width: 400px;
+      width: 120%;
       font-size: 15px;
     }
 

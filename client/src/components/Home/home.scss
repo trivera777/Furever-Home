@@ -16,21 +16,16 @@ body {
   background-attachment: fixed;
 }
 .home {
-  height: 100vh;
-  background-image: url("../../assets/sun.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-
   .container {
   
-    
     .header {
+      margin-left: 40px;
+      margin-right: 70px;
       font-size: 30px;
-      width: 400px;
-      height: 280px;
+      width: 500px;
+      height: 300px;
       padding: 40px;
+      margin-top: 30px;
       justify-content: center;
       align-content: center;
       border-radius: 70px 150px;
@@ -40,20 +35,8 @@ body {
       -webkit-backdrop-filter: blur(12px);
       color: #fff;
     }
-
-    .homeContainer {
-      display: flex;
-      background-color: lavender;
-    }
-
-    
-    label {
-      color: white;
-      
-    }
-    
-    .form-control {
-      width: "30%"
+    h2 {
+      color: #fff;
     }
   }
 

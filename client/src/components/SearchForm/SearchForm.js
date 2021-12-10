@@ -1,65 +1,67 @@
-import React from 'react';
+import React from "react";
+import { Form, Dropdown, DropdownButton } from "react-bootstrap";
 
 function SearchForm(props) {
   return (
-    <form onSubmit={props.handleFormSubmit}>
-      <div className="form-group">
-        
-        <label htmlFor="petType">Choose a pet:</label>
-        <select className="form-control" id="pets" name="pets" value={props.pets} onChange={props.handleInputChange}>
-          <option value="dog" >Dogs</option>
-          <option value="cat" >Cats</option>
-          <option value="bird" >Birds</option>
-          <option value="rabbit" >Rabbits</option>
-          {/* <option value="Birds">Fiat</option>
-          <option value="Reptiles">Audi</option> */}
-        </select>
-        <br/>
-        <label htmlFor="breed">Breed</label>
-        <input
-          onChange={props.handleInputChange}
-          value={props.breed}
-        //   defaultValue="Beagle"
-          name="breed"
-          type="text"
-          className="form-control"
-          placeholder="Search for a breed"
-          id="breed"
-        />
-        <label htmlFor="zip">Zip Code</label>
-        <input
-          onChange={props.handleInputChange}
-          value={props.zip}
-          name="zip"
-        //   defaultValue="80516"
-          type="text"
-          className="form-control"
-          placeholder="80516"
-          id="zip"
-        />
-        <label htmlFor="distance">Search Radius(miles)</label>
-        <input
-          onChange={props.handleInputChange}
-          value={props.distance}
-          name="distance"
-          type="text"
-          className="form-control"
-          placeholder="100"
-        //   defaultValue="100"
-          id="distance"
-        />
+    <main className="searchbackground" id="login">
+      <div className="formBody">
+        <Form className="mb-3" onSubmit={props.handleFormSubmit}>
+          <Form.Label className="title">Search</Form.Label>
+          <Form.Group className="mb-3">
+            <Form.Label htmlFor="petType">Choose a pet:</Form.Label>
+            <select
+              className="form-control"
+              id="pets"
+              name="pets"
+              value={props.pets}
+              onChange={props.handleInputChange}
+            >
+              <option value="dog">Dogs</option>
+              <option value="cat">Cats</option>
+              <option value="bird">Birds</option>
+              <option value="rabbit">Rabbits</option>
+            </select>
+            <br />
+            <Form.Label htmlFor="breed">Breed</Form.Label>
+            <Form.Control
+              onChange={props.handleInputChange}
+              value={props.breed}
+              name="breed"
+              type="text"
+              className="form-control"
+              placeholder="Search for a breed"
+              id="breed"
+            />
+            <Form.Label htmlFor="zip">Zip Code</Form.Label>
+            <Form.Control
+              onChange={props.handleInputChange}
+              value={props.zip}
+              name="zip"
+              type="text"
+              className="form-control"
+              placeholder="80516"
+              id="zip"
+            />
+            <Form.Label htmlFor="distance">Search Radius(miles)</Form.Label>
+            <Form.Control
+              onChange={props.handleInputChange}
+              value={props.distance}
+              name="distance"
+              type="text"
+              className="form-control"
+              placeholder="100"
+              //   defaultValue="100"
+              id="distance"
+            />
 
-        <br />
-        <input
-          
-          className="btn btn-primary"
-          type="submit"
-          value="Search"
-          
-        />
-         
+            <br />
+            <button type="submit" value="Search">
+              Search
+            </button>
+          </Form.Group>
+        </Form>
       </div>
-    </form>
+    </main>
   );
 }
 
